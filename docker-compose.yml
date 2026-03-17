@@ -31,3 +31,14 @@ volumes:
   pgdata:
 networks:
   app-network:
+  
+  jupyter:
+    image: jupyter/scipy-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    environment:
+      JUPYTER_TOKEN: ${JUPYTER_TOKEN}
+    networks:
+      - app-network
