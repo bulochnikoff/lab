@@ -4,6 +4,14 @@
     <title>Мой сервис</title>
 </head>
 <body>
-    <h1>Сервис работает</h1>
+    <h1>Сообщение от бэкенда:</h1>
+    <div id="message"></div>
+    <script>
+        fetch('http://localhost:5000/')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('message').innerText = data;
+            });
+    </script>
 </body>
 </html>
