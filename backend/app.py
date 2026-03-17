@@ -1,9 +1,10 @@
 from flask import Flask
 import psycopg2
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 def get_db_message():
     try:
         conn = psycopg2.connect(
